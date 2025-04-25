@@ -14,7 +14,22 @@
  *    6
  */
 const mode = function (arr) {
-  // Implement me
+  const numbersCount = {}; // { 6: 2, 2: 1, 3: 2, ... }
+  let currentMode = arr[0]; // 6
+
+  arr.forEach(num => {
+    if (numbersCount[num]) {
+      numbersCount[num]++;
+    } else {
+      numbersCount[num] = 1;
+    }
+
+    if (numbersCount[num] > numbersCount[currentMode]) {
+      currentMode = num;
+    }
+  });
+
+  return currentMode;
 };
 
 // Don't change below:

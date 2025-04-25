@@ -24,7 +24,17 @@ const round = function (number) {
  */
 
 const median = function (arr) {
-  // Implement me
+  arr.sort((a, b) => a - b);
+
+  const middleIndex = arr.length / 2;
+
+  if (arr.length % 2 === 0) {
+    const firstNumber = arr[middleIndex - 1];
+    const secondNumber = arr[middleIndex];
+
+    return round((firstNumber + secondNumber) / 2);
+  }
+  return round(arr[middleIndex - 0.5]);
 };
 
 // Don't change below:

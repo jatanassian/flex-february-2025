@@ -16,7 +16,7 @@
  *    9
  */
 const count = function (arr) {
-  // Implement me
+  return arr.length;
 };
 
 /* ===========================================================================
@@ -32,12 +32,19 @@ const count = function (arr) {
  *    36
  */
 const sum = function (arr) {
-  // Implement me
+  // [6,2,3,4,9,6,1,0,5]
+  //   let output = 0;
+  //   arr.forEach(num => {
+  //     output += num;
+  //   });
+  //   return output;
+
+  return arr.reduce((acc, num) => acc + num, 0);
 };
 
 // To be used by mean. Do not alter.
 const round = function (number) {
-  // Implement me
+  return Math.round(number * 100) / 100;
 };
 
 /* ===========================================================================
@@ -54,7 +61,11 @@ const round = function (number) {
  *    4
  */
 const mean = function (arr) {
-  // Implement me
+  if (!arr.length) {
+    return null;
+  }
+
+  return round(sum(arr) / count(arr));
 };
 
 // Don't change below:

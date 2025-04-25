@@ -28,8 +28,16 @@ const round = function (number) {
   return Math.round(number * 100) / 100;
 };
 
+const { mean, sum } = require('./q0');
+
 const stdev = function (arr) {
-  // Implement me
+  const deviations = arr.map(num => {
+    return (num - mean(arr)) ** 2;
+  });
+
+  const variance = mean(deviations);
+
+  return round(Math.sqrt(variance));
 };
 
 // Don't change below:

@@ -17,10 +17,21 @@ Examples:
 - tempConverter(98.6, false) returns 37 as a result
 - tempConverter("12", <anything>) returns NaN as a result
 
+(32°F − 32) × 5/9 = 0°C
+
+
+
 */
 
 const tempConverter = function (value, cToF) {
-  // Implement me
+  if (!Number.isInteger(value)) {
+    return NaN;
+  }
+
+  if (cToF) {
+    return Math.round(((value * 9) / 5 + 32) * 10) / 10;
+  }
+  return Math.round((((value - 32) * 5) / 9) * 10) / 10;
 };
 
 // Don't change below:

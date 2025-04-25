@@ -13,7 +13,19 @@ Examples
 */
 
 const objectToArray = function (obj) {
-  // Implement me
+  //   return Object.entries(obj);
+
+  const output = [];
+
+  for (const key in obj) {
+    const value = obj[key];
+
+    const subArray = [key, value];
+
+    output.push(subArray);
+  }
+
+  return output;
 };
 
 // Don't change below:

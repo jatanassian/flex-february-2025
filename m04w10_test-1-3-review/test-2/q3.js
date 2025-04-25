@@ -30,7 +30,35 @@ Pro Tip: Remember to work incrementally. Start off just implementing the false a
 */
 
 const range = function (count, skipZero, descending) {
-  // Implement me
+  let output = [];
+
+  if (!Number.isInteger(count)) {
+    return output;
+  }
+
+  //   if (skipZero) {
+  //     for (let i = 1; i <= count; i++) {
+  //       output.push(i);
+  //     }
+  //   } else {
+  //     for (let i = 0; i < count; i++) {
+  //       output.push(i);
+  //     }
+  //   }
+
+  for (let i = 0; i < count; i++) {
+    output.push(i);
+  }
+
+  if (skipZero) {
+    output = output.map(num => num + 1);
+  }
+
+  if (descending) {
+    output.reverse();
+  }
+
+  return output;
 };
 
 // Don't change below:

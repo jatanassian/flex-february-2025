@@ -14,7 +14,20 @@ Examples:
 */
 
 const arrayToObject = function (arr) {
-  // Implement me
+  // return Object.fromEntries(arr);
+
+  const output = {};
+
+  for (const subArray of arr) {
+    // const key = subArray[0];
+    // const value = subArray[1];
+
+    const [key, value] = subArray;
+
+    output[key] = value;
+  }
+
+  return output;
 };
 
 // Don't change below:

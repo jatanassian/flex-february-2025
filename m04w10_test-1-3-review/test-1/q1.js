@@ -16,7 +16,25 @@
  *    0
  */
 const min = function (arr) {
-  // Implement me
+  // SOLUTION 1
+  //   let lowest = arr[0];
+  //   arr.forEach(num => {
+  //     if (num < lowest) {
+  //       lowest = num;
+  //     }
+  //   });
+  //   return lowest;
+
+  // SOLUTION 2
+  //   return arr.reduce((lowest, num) => {
+  //     if (num < lowest) {
+  //       return num;
+  //     }
+  //     return lowest;
+  //   }, arr[0]);
+
+  // SOLUTION 3
+  return Math.min(...arr);
 };
 
 /* ===========================================================================
@@ -31,7 +49,7 @@ const min = function (arr) {
  *    9
  */
 const max = function (arr) {
-  // Implement me
+  return Math.max(...arr);
 };
 
 /* ===========================================================================
@@ -46,7 +64,7 @@ const max = function (arr) {
  *    9
  */
 const range = function (arr) {
-  // Implement me
+  return max(arr) - min(arr);
 };
 
 // Don't change below:

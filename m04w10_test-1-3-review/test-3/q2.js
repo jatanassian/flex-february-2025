@@ -14,7 +14,18 @@ Examples:
 */
 
 const partition = function (arr, callback) {
-  // Implement me
+  const left = [];
+  const right = [];
+
+  for (const int of arr) {
+    if (callback(int)) {
+      left.push(int);
+      continue;
+    }
+    right.push(int);
+  }
+
+  return [left, right];
 };
 
 // Don't change below:

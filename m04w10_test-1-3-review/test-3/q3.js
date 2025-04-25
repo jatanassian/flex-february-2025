@@ -15,7 +15,19 @@ Examples:
 */
 
 const deepArrayToObject = function (arr) {
-  // Implement me
+  const output = {};
+
+  for (const subArray of arr) {
+    const [key, value] = subArray;
+
+    if (Array.isArray(value)) {
+      output[key] = deepArrayToObject(value);
+    } else {
+      output[key] = value;
+    }
+  }
+
+  return output;
 };
 
 // Don't change below:

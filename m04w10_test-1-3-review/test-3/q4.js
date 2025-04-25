@@ -21,7 +21,31 @@ Examples:
 */
 
 const filesize = function (bytes) {
-  // Implement me
+  //   if (bytes < 1_000) {
+  //     return `${bytes}B`;
+  //   } else if (bytes < 1_000_000) {
+  //     return `${bytes / 1_000}kB`;
+  //   } else if (bytes < 1_000_000_000) {
+  //     return `${bytes / 1000000}MB`;
+  //   } else if (bytes < 1000000000000) {
+  //     return `${bytes / 1000000000}GB`;
+  //   } else {
+  //     return `${bytes / 1000000000000}TB`;
+  //   }
+
+  const units = ['B', 'kB', 'MB', 'GB'];
+
+  for (const unit in hash) {
+  }
+
+  for (const unit of units) {
+    if (bytes < 1000) {
+      return `${bytes}${unit}`;
+    }
+    bytes /= 1000;
+  }
+
+  return `${bytes}TB`;
 };
 
 // Don't change below:
